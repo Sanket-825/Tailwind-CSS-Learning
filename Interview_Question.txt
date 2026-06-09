@@ -1,0 +1,143 @@
+1. 1rem is Equal to how mnay pixels?
+=> 1rem = 16px 
+
+2. What does [&>*]:flex do in Tailwind CSS?
+=> 
+    It applies display: flex to all direct child elements of the current element using an arbitrary variant selector.
+
+    & = the current element, > = direct child combinator, * = all direct children, :flex = apply display: flex
+
+3. Which colors do not have shades in Tailwind?
+=> 
+   Black and White colors do not have shades in Tailwind
+
+4. How to apply color to underline in css?
+=> 
+   text-decoration-color
+   In Tailwind we use decoration-color : decoration-red-500  
+   For Thickness => decoration-0 ,decoration-1, decoration-2
+
+5. How to apply 1px margin and padding? 
+=> 
+   For that we can use => p-px OR m-px 
+                       => p-[1px] OR m-[1px]  ||  pt-[1px]  OR  mb-[1px] 
+
+
+6. If we put width greater than max-width?
+=> 
+   If both width and max-width are specified, and the width value is greater than max-width, the browser uses the max-width value as the final rendered width.
+
+   max-width acts as an upper limit.
+
+   If width is smaller than min-width, min-width wins.
+   If width is larger than max-width, max-width wins.
+   Otherwise, width is used.
+
+7. use of auto width?
+=> 
+   width: auto is the default width behavior for most elements. It means:
+   "Let the browser determine the width based on the element type, content, and layout context."
+   
+8. What is the difference between w-auto and w-full?
+=> 
+   width: auto lets the browser calculate the element's width automatically based on its content, display type, and available space. For block elements it usually fills the available horizontal space, while for inline elements it typically shrinks to fit the content. It is the default value of the CSS width property.
+
+   width: 100%, Takes the full width of the parent container.
+
+9. What is the view port?
+=> 
+   The viewport is the visible area of a web page inside the browser window.
+   It is the portion of the page the user can currently see
+   It does not include the browser UI (tabs, address bar, bookmarks)
+   Its size changes based on device (mobile, tablet, desktop) and window resizing
+
+
+10. The difference between h-screen and h-full?
+=> 
+   h-screen : 
+              Sets element height to 100% of viewport height
+              Equivalent to: height: 100vh
+
+   h-full : 
+             Sets element height to 100% of its parent’s height
+             Depends on parent having a defined height
+             If parent height is not set → h-full may not work as expected
+             Equivalent to: height: 100%
+
+
+   | Feature        | `h-screen`           | `h-full`                 |
+   | -------------- | -------------------- | ------------------------ |
+   | Reference      | Viewport             | Parent element           |
+   | CSS equivalent | `100vh`              | `100%`                   |
+   | Dependency     | Independent          | Depends on parent height |
+   | Use case       | Full-screen sections | Fill container space     |
+   | Reliability    | Always consistent    | Requires parent height   |
+
+
+11. If asked “What are sizes in Tailwind?”, answer like this?
+=> 
+   Tailwind uses a utility-first spacing scale (based on rem units) that controls sizing across width, height, margin, padding, gap, and constraints. It ensures consistency by mapping numeric classes to fixed values (e.g., 4 = 1rem). It also provides semantic sizes like full, screen, auto, and fractional widths for layout control.
+
+
+12. What is the container utility in Tailwind CSS?
+=> 
+   he container utility in Tailwind CSS is a layout helper that sets a max-width based on the current responsive breakpoint, while centering the content using auto margins.
+   It does not behave like a fixed width; instead it adapts across screen sizes.
+
+13. What are the default container breakpoints in Tailwind CSS?
+=> 
+   The container’s max-width changes at Tailwind’s default breakpoints:
+
+   sm: 640px
+   md: 768px
+   lg: 1024px
+   xl: 1280px
+   2xl: 1536px
+
+   So the container expands step-by-step as viewport width increases.
+
+   You can customize this in tailwind.config.js using theme.container.
+
+14. What is the difference between responsive breakpoints and container breakpoints?
+=> 
+   Responsive breakpoints (viewport-based):
+   Based on screen size
+   Use utilities like md:bg-red-500
+   Example: applies when browser width ≥ 768px
+
+   Container breakpoints (container-based):
+   Based on parent container width, not viewport
+   Use container queries like @md, @lg
+   Example: applies when a div is ≥ 768px wide, even inside a small screen
+
+15. What are container queries in Tailwind CSS v4
+=> 
+   Container queries allow styles to change based on the size of a parent element rather than the screen.
+
+      <div class="@container">
+         <div class="@md:text-lg @sm:text-sm">
+            Responsive to container size
+         </div>
+      </div>
+
+      This is not viewport responsiveness.
+
+      It means:
+
+      “Typography scales based on the parent component width, not the screen size.”
+
+16. last matching rule wins
+=> 
+   <div class="@sm:text-sm @md:text-xl @lg:text-3xl">
+
+   And container width = 1100px
+
+   Then: @sm → true
+         @md → true
+         @lg → true
+
+         👉 All apply, but CSS cascade decides final output:
+
+         the last matching rule in stylesheet wins, so @lg:text-3xl wins.
+
+         @md means container element width ≥ md

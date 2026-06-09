@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Class in Tailwind CSS</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <div>
+        <ul class="bg-amber-700 flex justify-end [&>*]:p-2">
+            <li><a href="">Home</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Login</a></li>
+        </ul>
+    </div>
+    <!-- <div class="text-3xl bg-amber-500 container ">Container</div>
+    <div class="text-3xl bg-amber-400 container ">Main Page</div>
+    <div class="text-3xl bg-amber-300 container ">Down Page</div>
+    <div class="text-3xl bg-amber-600 container ">Contact Page</div> -->
+
+    <div class="text-3xl sm:bg-red-500 container ">Container</div>
+    <div class="text-3xl md:bg-amber-400 container ">Main Page</div>
+    <div class="text-3xl lg:bg-green-300 container ">Down Page</div>
+    <div class="text-3xl xl:bg-amber-600 container ">Contact Page</div>
+    <div class="text-3xl 2xl:bg-purple-600 container ">Contact Page</div>
+
+    <div class="@container">
+        <div class="@sm:text-sm @md:text-2xl @xl:text-2xl">
+            Responsive to container size
+        </div>
+    </div>
+</body>
+</html>
+
+
+
