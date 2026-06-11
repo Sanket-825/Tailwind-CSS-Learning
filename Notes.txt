@@ -568,3 +568,15 @@
         How it works: Parent has group.
                       Child has group-hover:text-blue-500.
                       When the parent is hovered, the child text turns blue.
+
+
+** Columns in Tailwind CSS **
+
+  1. In Tailwind CSS v4, the columns-* utilities are used to create multi-column layouts
+     using the CSS Multi-column Layout module.
+
+     They are different from CSS Grid and Flexbox because the browser automatically flows content from one column to the next, similar to a newspaper or magazine layout.
+
+  
+  2. 
+
