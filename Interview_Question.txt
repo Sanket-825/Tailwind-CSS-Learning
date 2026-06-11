@@ -187,3 +187,37 @@
    | `:focus`     | When an element has keyboard or input focus.                                          |
    | `:active`    | While the element is being activated (typically during a mouse click or touch press). |
 
+
+23. What is the purpose of the columns-* utility in Tailwind CSS?
+=>    
+   The columns-* utility creates a multi-column layout using CSS Multi-column Layout. It automatically flows content across columns, making it useful for articles, image galleries, and masonry-style layouts.
+
+24. How is columns-* different from Grid?
+=> 
+   columns-* automatically distributes content vertically and then horizontally across columns, while Grid gives explicit control over rows and columns. Grid is better for structured layouts; columns are better for flowing content.
+
+25. When would you use columns-md instead of columns-3?
+=> 
+   columns-md specifies a preferred column width rather than a fixed number of columns. The browser determines how many columns fit based on available space, making it more responsive.
+
+26. How do you control spacing between columns?
+=> 
+   Using the gap-* utilities: <div class="columns-3 gap-8">
+   This sets the column gap.
+
+27. What problem does break-inside-avoid solve?
+=> 
+   It prevents an element from being split across multiple columns. This is especially useful for cards, images, and content blocks.
+
+28. Can columns create a masonry layout?
+=> 
+   Yes. Multi-column layouts naturally create masonry-like arrangements where items of varying heights stack vertically before filling the next column.
+
+29. What are the limitations of CSS Columns?
+=> 
+   No direct row control.
+   Difficult item positioning.
+   Content order is vertical first, then horizontal.
+   Less suitable for dashboards and complex layouts.
+
+   For such cases, CSS Grid is preferred.
