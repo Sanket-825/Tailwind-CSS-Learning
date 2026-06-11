@@ -141,3 +141,49 @@
          the last matching rule in stylesheet wins, so @lg:text-3xl wins.
 
          @md means container element width ≥ md
+
+
+17. What is the difference between bg-cover and bg-contain?
+=> 
+   bg-cover: Scales image to cover the entire element, may crop parts.
+   bg-contain: Scales image to fit inside element without cropping, may leave empty space.
+
+   Use cover for hero sections and contain for logos or full-image visibility.
+
+
+18. What is the difference between bg-fixed and bg-scroll?
+=> 
+   bg-fixed: Background stays fixed relative to viewport.
+   bg-scroll: Background moves with page scroll (default behavior).
+
+   Used mainly for parallax-like effects.
+
+
+19. What does background-size: cover do?
+=> 
+   It scales the background image so it completely covers the element’s area while maintaining aspect ratio. Some parts may be cropped.
+
+20. When would you use container vs bg-cover in a real project?
+=> 
+   Use container for page layout like headers, sections, and grids.
+   Use bg-cover for hero sections, banners, and full-screen background images.
+
+21. how to disable filter in tailwind css?
+=> 
+   In Tailwind CSS v4, you disable all applied CSS filters using the filter-none utility.
+
+   Example : <img class="blur-md brightness-150 filter-none" />
+
+   Disable filters at a breakpoint : <img class="blur-md brightness-125 md:filter-none" />
+
+
+22. difference between focus and Active? answer as interview
+=> 
+   :focus is the state when an element has input focus and can receive keyboard events, 
+   while :active is a temporary state that exists only while the user is pressing or activating the element.
+
+   | Pseudo-class | When it Applies                                                                       |
+   | ------------ | ------------------------------------------------------------------------------------- |
+   | `:focus`     | When an element has keyboard or input focus.                                          |
+   | `:active`    | While the element is being activated (typically during a mouse click or touch press). |
+

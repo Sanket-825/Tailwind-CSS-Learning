@@ -377,8 +377,194 @@
   1. In Tailwind CSS v4, background utilities are part of the broader “background” design system
      that controls background color, image, size, position, repeat, attachment, and gradients using utility-first classes.
 
-  2. 
+  2. Background Classes in Tailwind CSS v4
+    
+    A) Background Color : Used to set element background color.
+
+        Syntax: bg-{color}-{shade}
+
+        Examples : <div class="bg-blue-500"></div>
+                   <div class="bg-gray-100"></div>
+                   <div class="bg-red-600"></div>
+
+
+    B) Background Image : Used to apply images or gradients.
+
+        Syntax: bg-none | bg-gradient-to-* | bg-[url()]
+
+        Examples : <div class="bg-none"></div>
+                   <div class="bg-[url('Page.jpg')]"></div>
+
+
+        ** Gradient utilities ** : <div class="bg-gradient-to-r from-blue-500 to-purple-600"></div>
+        
+            Direction options: to-r, to-l, to-t, to-b
+                            to-tr, to-bl, etc. 
+
+            to-r = gradient goes left → right
+            to-l = gradient goes right → left
+            to-b = gradient goes top → bottom
+            to-t = gradient goes bottom → top
+
+
+    C)Background Size : Controls how background images scale.
+
+        bg-auto, bg-cover, bg-contain
+
+        Examples : <div class="bg-cover bg-[url('/img.jpg')]"></div>
+
+
+    D) Background Position
+
+        Controls alignment of background image. 
+            bg-center
+            bg-top
+            bg-bottom
+            bg-left
+            bg-right
+        
+        Example: <div class="bg-top bg-[url('/img.jpg')]"></div>
+
+    E) Background Repeat : Controls repetition behavior.
+
+        bg-repeat
+        bg-no-repeat
+        bg-repeat-x
+        bg-repeat-y
+
+    F) Background Attachment : Controls scroll behavior.
+
+        bg-fixed
+        bg-local
+        bg-scroll
+
+        Examples : <div class="bg-fixed bg-[url('/bg.jpg')]"></div>
+    
+    G) shadow in CSS : 
+
+        Syntax : box-shadow: x-offset y-offset blur spread color;
+
+        Example : box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+      ** Tailwind provides prebuilt shadow utilities so you don’t write CSS manually. **
+
+        Basic shadow scale: shadow-sm
+                            shadow
+                            shadow-md
+                            shadow-lg
+                            shadow-xl
+                            shadow-2xl
+                            shadow-none 
+
+      ** Inner shadow ** : Shadow appears inside the element Used for pressed buttons or input fields
+
+        Example : <div class="shadow-inner p-4"> Inner shadow </div>
+
+      ** Custom shadow (arbitrary value) ** 
+
+        Example : <div class="shadow-[0_10px_20px_rgba(0,0,0,0.25)] p-4"> Custom shadow </div>
+
+    
+** Filters in Tailwind CSS **
   
+  1. In Tailwind CSS v4, filters are much simpler to use. You apply filter utilities directly 
+     without needing a separate filter class. Tailwind automatically composes them into the final CSS filter property.
+
+  2. Available Filter Utilities : 
+    
+    | Utility     | Example                                             
+    | ----------- | --------------------------------------------------- 
+    | Blur        | `blur-sm`, `blur-md`, `blur-xl`                     
+    | Brightness  | `brightness-50`, `brightness-125`, `brightness-200` 
+    | Contrast    | `contrast-50`, `contrast-150`                       
+    | Grayscale   | `grayscale`, `grayscale-0`                          
+    | Hue Rotate  | `hue-rotate-90`, `-hue-rotate-30`                   
+    | Invert      | `invert`, `invert-50`                               
+    | Saturate    | `saturate-50`, `saturate-150`, `saturate-200`       
+    | Sepia       | `sepia`, `sepia-50`                                 
+    | Drop Shadow | `drop-shadow-sm`, `drop-shadow-lg`                  
 
 
+** Interactivity with Tailwind CSS **
 
+  1. Interactivity utilities control how users interact with elements => mouse, touch, keyboard, text selection,
+     scrolling, resizing, and pointer behavior. They are thin wrappers around native CSS interaction properties.
+
+  2. Common Interactivity Classes : 
+    
+    | Category       | Utility                          | CSS Generated             |
+    | -------------- | -------------------------------- | ------------------------- |
+    | Cursor         | `cursor-pointer`                 | `cursor: pointer`         |
+    | Cursor         | `cursor-not-allowed`             | `cursor: not-allowed`     |
+    | Pointer Events | `pointer-events-none`            | `pointer-events: none`    |
+    | Pointer Events | `pointer-events-auto`            | `pointer-events: auto`    |
+    | Text Selection | `select-none`                    | `user-select: none`       |
+    | Text Selection | `select-all`                     | `user-select: all`        |
+    | Scrolling      | `scroll-smooth`                  | `scroll-behavior: smooth` |
+    | Scrolling      | `scroll-auto`                    | `scroll-behavior: auto`   |
+    | Resize         | `resize`, `resize-x`, `resize-y` | Controls element resizing |
+
+
+  3. Interview Examples
+
+    1. Disable Clicks on an Element => The element ignores hover, click, and pointer interactions.
+
+        <div class="pointer-events-none">
+            Loading...
+        </div>
+
+    2. Make a Button Look Clickable : Shows the hand cursor when hovered. In Tailwind v4, buttons don't
+                                      automatically get a pointer cursor, so adding cursor-pointer is common when desired.
+
+        <button class="cursor-pointer">
+            Submit
+        </button>
+
+
+    3. Prevent Text Selection => Useful for buttons, draggable items, and UI controls.
+
+        <button class="select-none">
+            Click Me
+        </button>   
+    
+    4. Smooth Page Scrolling => Enables smooth scrolling when navigating to anchors.
+
+        <html class="scroll-smooth">
+
+
+    5. :focus : An element is focused when it is selected and ready to receive keyboard input.   
+
+        Examples:  Clicking into an input field.
+                   Pressing Tab until a button or input is selected.
+                   Programmatically focusing an element with JavaScript.
+
+                   <input class="focus:border-blue-500" />
+        
+        Key point: Focus remains until the user moves focus somewhere else.
+
+
+    6. :active : An element is active while it is being pressed.
+
+        Examples:  Holding down the mouse button on a button.
+                   Touching and holding a button on a mobile device.
+
+                   <button class="active:scale-95">
+                     Submit
+                   </button> 
+
+        Key point: Active exists only during the press action.
+    
+
+    7. group-hover  
+    =>  
+        group-hover lets you change the styles of a child element when its parent is hovered.
+
+        Example :  <div class="group p-4 border">
+                     <h3 class="text-gray-700 group-hover:text-blue-500">
+                        Product Title
+                     </h3>
+                   </div>
+
+        How it works: Parent has group.
+                      Child has group-hover:text-blue-500.
+                      When the parent is hovered, the child text turns blue.
