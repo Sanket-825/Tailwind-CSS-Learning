@@ -221,3 +221,104 @@
    Less suitable for dashboards and complex layouts.
 
    For such cases, CSS Grid is preferred.
+
+30. Difference between justify-center and items-center?
+=>    
+   justify-center → main axis
+   items-center → cross axis
+
+   For flex-row: justify-center => horizontal
+                 items-center => vertical
+
+   For flex-col: justify-center => vertical
+                 items-center => horizontal
+
+31. Difference between items-center and content-center?
+=> 
+   items-center : Aligns items inside a single flex line.
+
+   content-center : Aligns multiple wrapped lines.
+                    Works only with flex-wrap.
+
+32. What does flex-wrap do? 
+=> 
+   Allows items to move to the next line when space is insufficient.
+
+33. What happens if some items have order and others don't?
+=> 
+   Items without an order class have: order-0
+
+   Example :   <div class="order-2">A</div>
+               <div>B</div>
+
+   Layout : B
+            A
+      
+   because: B => order:0
+            A => order:2
+
+34. What is the difference between Flexbox and Grid?
+=> 
+   Flexbox is one-dimensional (row OR column).
+   Grid is two-dimensional (rows AND columns).
+
+   Use Flexbox for: Navbar
+                    Button groups
+                    Menus
+
+   Use Grid for: Dashboard
+                 Gallery     
+                 Page layout
+                 Card layouts
+
+
+35. What does grid-cols-12 do?
+=> 
+   Creates 12 equal-width columns. 
+   
+   Ex : <div class="grid grid-cols-12">
+
+36. What is the purpose of col-span-*?
+=> 
+   Allows an item to occupy multiple columns.
+
+   Ex : <div class="col-span-4"> (Occupied 4 columns)
+
+37. Difference between auto-fit and auto-fill?
+=> 
+   auto-fit : Collapses empty tracks and expands existing items.
+
+   auto-fill : Keeps empty columns reserved.
+
+38. What does gap-4 do?
+=> 
+   Adds spacing between grid items.
+   Ex : <div class="grid gap-4">
+
+39. How do you make a responsive grid in Tailwind?
+=> 
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+
+40. What is the difference between items-center and justify-items-center?
+=> 
+   items-center : Aligns items vertically inside cells.
+
+   justify-items-center : Aligns items horizontally inside cells.
+
+41. Explain place-items-center?
+=>    
+   Shortcut for: items-center justify-items-center
+
+   Centers content both vertically and horizontally.
+
+42. What's the difference between place-items-center and place-content-center?
+=> 
+   place-items-center : Centers the items inside grid cells.
+
+   Ex : align-items: center;
+        justify-items: center;
+
+   place-content-center : Centers the entire grid itself inside the container.
+
+   Ex : align-content: center;
+        justify-content: center;

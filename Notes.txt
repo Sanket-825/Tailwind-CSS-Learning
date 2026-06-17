@@ -643,3 +643,220 @@
         <img src="3.jpg" class="mb-4 rounded">
         <img src="4.jpg" class="mb-4 rounded">
     </div>
+
+
+** Flex in Tailwind CSS **
+
+  1. flex → makes a container use Flexbox (display: flex)
+  2. flex-* utilities → control how flex items grow and shrink inside a flex container
+
+  3. Order : default order value is 0 
+             Actually, the items without an order class have order: 0, so they'll come before ordered items.   
+
+            <div class="bg-blue-400 size-32 ">order 1</div>
+            <div class="bg-red-400 size-32 ">order 2</div>
+            <div class="bg-purple-400 size-32"></div>
+            <div class="bg-indigo-600 size-32"></div>
+            <div class="bg-orange-600 size-32"></div>
+
+  4. Flexbox is a one-dimensional layout system used to arrange items in a row or column. Tailwind provides utility classes that map directly to CSS Flexbox properties. 
+    
+    1. Enable Flexbox : By default => flex-direction: row;
+
+                        <div class="flex">
+                            <div>Item 1</div>
+                            <div>Item 2</div>
+                        </div>
+    
+    2. Flex Direction : 
+                        <div class="flex flex-row">   (Default)
+
+                        <div class="flex flex-col">   (column wise) 
+
+                        flex-row-reverse
+                        flex-col-reverse
+
+    3. Justify Content : Controls alignment on the main axis.
+
+                        <div class="flex justify-center">
+                    
+            Options :  justify-start
+                       justify-center
+                       justify-end
+                       justify-between
+                       justify-around
+                       justify-evenly 
+
+    4. Align Items : Controls alignment on the cross axis.
+
+                    <div class="flex items-center"> 
+
+            Options: items-start
+                     items-center
+                     items-end
+                     items-stretch
+                     items-baseline
+
+    5. Flex Wrap : Without wrapping Items overflow.
+                   With Wrapping Items move to the next line when space runs out.
+
+                   <div class="flex flex-wrap"> 
+                
+    6. Difference : 
+                    items-center : Aligns items inside a row.
+
+                    content-center : Aligns multiple wrapped rows.
+
+    8. Flex Grow : 
+                <div class="flex">
+                    <div class="grow">A</div>
+                    <div>B</div>
+                </div>
+
+                Equivalent: flex-grow: 1;
+
+                A takes remaining space.
+
+    9. Flex Shrink: 
+                   <div class="shrink"> (Allows shrinking.)
+
+                   <div class="shrink-0"> (Prevents shrinking.)
+
+                    Common for logos: <img class="shrink-0">
+
+    10. Responsive Flex : 
+
+        Mobile first.
+
+        <div class="flex flex-col md:flex-row">
+
+
+** Grid in Tailwind CSS **
+
+     CSS Grid is a layout system used to arrange elements in rows and columns.
+
+     CSS Grid is a two-dimensional layout system that lets you control both rows and columns. Tailwind provides utility classes that map directly to CSS Grid properties. 
+
+  
+  1. Making a Grid Container : The grid class turns an element into a grid container.
+  => 
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>  
+
+  2. Defining Columns : 2 Columns  
+
+    <div class="grid grid-cols-2 gap-4">
+        <div>A</div>
+        <div>B</div>
+    </div>
+
+  3. Gap Between Grid Items : Adds spacing between rows and columns.
+    
+    <div class="grid grid-cols-3 gap-4">
+
+   ** Separate Row/Column Gap ** 
+                                gap-x-6 → horizontal gap
+                                gap-y-2 → vertical gap
+    
+    <div class="grid grid-cols-3 gap-x-6 gap-y-2">
+
+
+  4. Column Span : Make an item occupy multiple columns.
+
+    <div class="grid grid-cols-4 gap-4">
+        <div class="col-span-2">Wide Item</div>
+        <div>Item</div>
+        <div>Item</div>
+    </div>   
+
+  5. Column Start / End : Control exact placement.
+
+    <div class="grid grid-cols-6 gap-4">
+        <div class="col-start-2 col-end-5">
+            Content
+        </div>
+    </div>
+
+    ** Occupies columns 2–4. **
+
+  6. Row Span : 
+
+    <div class="grid grid-cols-3 grid-rows-3 gap-4">
+        <div class="row-span-2">
+            Tall Item
+        </div>
+    </div>  
+
+  7. Responsive Grid
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-red-300 p-10 border border-red-700"></div>
+        <div class="bg-red-300 p-10 border border-red-700"></div>
+        <div class="bg-red-300 p-10 border border-red-700"></div>
+        <div class="bg-red-300 p-10 border border-red-700"></div>
+    </div>
+
+    Meaning : 
+             | Screen         | Columns |
+             | -------------- | ------- |
+             | Mobile         | 1       |
+             | Tablet (`md`)  | 2       |
+             | Desktop (`lg`) | 4       |
+
+
+  8. Arbitrary Grid Values : Tailwind v4 supports arbitrary values naturally.    
+
+    <div class="grid grid-cols-[200px_1fr_100px]">
+        <div class="bg-red-300 p-10 border border-red-700"></div>
+        <div class="bg-red-300 p-10 border border-red-700"></div>
+        <div class="bg-red-300 p-10 border border-red-700"></div>
+    </div>
+
+  9. Grid Alignment :
+    
+    1. item-start : Align Items Vertically
+
+        <div class="grid grid-cols-3 h-48 border items-start">
+            <div class="border p-2">A</div>
+            <div class="border p-2">B</div>
+            <div class="border p-2">C</div>
+        </div>
+
+    2. items-center : Centers content vertically inside grid cells.
+
+        <div class="grid grid-cols-3 h-48 border items-center">
+            <div class="border p-2">A</div>
+            <div class="border p-2">B</div>
+            <div class="border p-2">C</div>
+        </div>
+
+    3. items-end : Moves content to the bottom of each cell.
+    
+        <div class="grid grid-cols-3 h-48 border items-end">
+            <div class="border p-2">A</div>
+            <div class="border p-2">B</div>
+            <div class="border p-2">C</div>
+        </div>
+
+    4. justify-items-start : Aligns content to the left side of each grid cell.
+
+        <div class="grid grid-cols-3 justify-items-start">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+        </div>
+
+     4. justify-items-center : Centers content horizontally.
+
+     5. justify-items-end : Moves content to the right side.
+
+     6. place-items-center : Equivalent to: <div class="grid h-48 items-center justify-items-center">
+
+        <div class="grid h-48 place-items-center">
+            <div class="bg-blue-500 p-4 text-white">
+                Centered
+            </div>
+        </div>
