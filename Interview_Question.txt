@@ -322,3 +322,18 @@
 
    Ex : align-content: center;
         justify-content: center;
+
+
+43. What is the difference between transform and transition in Tailwind CSS?
+=> 
+   Transform changes an element's visual appearance, such as moving, rotating, scaling, or skewing it.
+   Transition animates the change between two states of an element.
+
+44. When would you use transition-transform instead of transition-all?
+=> 
+   Use transition-transform when only transform properties need animation.
+
+45. Explain duration-300 and ease-in-out.
+=> 
+   duration-300 → transition takes 300 milliseconds.
+   ease-in-out → starts slowly, speeds up in the middle, and slows down at the end.

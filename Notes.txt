@@ -860,3 +860,119 @@
                 Centered
             </div>
         </div>
+
+
+** Transform and Transition **
+
+    ** Transform = changes an element's appearance (move, rotate, scale, skew).
+
+    ** Transition = animates the change from one state to another.
+
+    1. Transform : Transforms modify an element's visual position, size, or orientation without affecting 
+                   the document layout.
+    => 
+        Common transform utilities
+
+        A) Translate (move) : 
+            Ex : <div class="translate-x-4"> (Moves the element horizontally.)
+
+            Ex : <div class="translate-y-8"> (Moves the element vertically.)
+
+
+        B) Scale (resize) : 
+
+            Ex : <div class="scale-110"> (Makes the element 110% of its original size.)
+
+        
+        C) Rotate : 
+
+            Ex : <div class="rotate-45"> (Rotate 45 Deg)
+
+        D) Skew : 
+
+            Ex : <div class="skew-x-6"> (Slants the Element)
+
+
+    2. Transition : Transitions animate property changes smoothly over time.
+                    Tailwind provides utilities for choosing which properties animate, how long they take, and the easing function.   
+
+        Common Transition Classes => 
+
+        | Class                  | What it animates                                               |
+        | ---------------------- | -------------------------------------------------------------- |
+        | `transition`           | Common properties (colors, opacity, transforms, shadows, etc.) |
+        | `transition-all`       | Every animatable property                                      |
+        | `transition-colors`    | Colors only                                                    |
+        | `transition-opacity`   | Opacity only                                                   |
+        | `transition-transform` | Transform properties only                                      |
+        | `transition-none`      | Disable transitions                                            |
+            
+        
+    3. Duration : Controls how long the animation takes.
+
+        duration-75
+        duration-150
+        duration-300
+        duration-500
+        duration-700
+        duration-1000
+
+        Ex : <button class="transition duration-500 hover:bg-blue-500"> 
+             The color change takes 500ms.   
+    
+
+    4. Timing Functions : Controls the animation speed curve.
+
+        ease-linear
+        ease-in
+        ease-out
+        ease-in-out
+
+
+** Animation in Tailwind CSS **
+
+    1. Built-in Animation Utilities
+
+       Tailwind ships with several predefined animation classes:
+
+        | Class            | Purpose                       |
+        | ---------------- | ----------------------------- |
+        | `animate-spin`   | Continuous rotation (loaders) |
+        | `animate-ping`   | Expanding ripple effect       |
+        | `animate-pulse`  | Fading in/out effect          |
+        | `animate-bounce` | Vertical bouncing             |
+        | `animate-none`   | Disables animation            |
+
+    Ex : 
+
+        <!-- <div class="size-10 bg-red-400 mt-10 ml-10 rounded-full animate-bounce">
+        </div>
+        <hr> -->
+
+        <!-- <div class="w-50 h-2 bg-green-400 mt-30 ml-15 animate-spin"></div>
+        <hr> -->
+
+        <!-- <img src="./Spin-Wheel.jpg" class="size-75 mt-20 ml-50 animate-none md:animate-spin" alt="Spin-Wheel"> -->
+
+        <!-- <div class="size-15 bg-red-400 mt-10 ml-10 rounded-[50%] animate-ping"></div> -->
+
+        <!-- <div class="size-15 bg-red-400 mt-10 ml-10 rounded-[50%] animate-pulse"></div> -->
+
+        <!-- <div class="flex justify-center h-screen items-center">
+            <img src="./Spin-Wheel.jpg" class="size-32 animate-ping" alt="Spin-Wheel">
+        </div> -->
+
+
+    2. Using Custom Animation Values : For one-off animations, use arbitrary values:
+
+    Ex : <div class="animate-[wiggle_1s_ease-in-out_infinite]"> Wiggle </div>
+
+         This generates: animation: wiggle 1s ease-in-out infinite;
+
+    
+    3. Responsive Animations : Animations can be applied conditionally using breakpoints:
+
+      Ex : 
+            <div class="animate-none md:animate-spin">
+                Spins only on medium screens+
+            </div>  

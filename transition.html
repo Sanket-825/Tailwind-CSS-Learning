@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition with Tailwind CSS</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <button class="bg-blue-400 text-white p-2 rounded m-10 hover:bg-blue-800">Login</button>
+    <button class="bg-blue-400 text-white p-2 rounded m-10 hover:bg-blue-800 transition duration-1000">Signup</button>
+    <button class="bg-blue-400 text-white p-2 rounded m-10 hover:opacity-30 transition duration-1000">Logout</button>
+    <button class="bg-cyan-400 text-white p-2 rounded m-10 hover:rotate-45 hover:bg-red-400 transition-transform duration-700">Register</button>
+    <button class="bg-cyan-400 text-white p-2 rounded m-10 hover:scale-75 hover:bg-red-400 transition-transform duration-700">Cancel</button>
+    <button class="bg-cyan-400 text-white p-2 rounded m-10 hover:scale-x-150 hover:scale-y-75 hover:bg-red-400 transition-transform duration-700">Cancel</button>
+    <img src="./funny-dog.jpg" class="m-25 w-52 hover:rotate-45 hover:scale-125 transition duration-700" alt="Dog image">
+    <img src="./funny-dog.jpg" class="m-25 w-52 hover:rotate-x-45 hover:scale-125 transition duration-700" alt="Dog image">
+    <img src="./funny-dog.jpg" class="m-25 w-52 hover:rotate-y-45 hover:scale-125 transition duration-700" alt="Dog image">
+    <img src="./funny-dog.jpg" class="m-25 w-52 hover:rotate-[-45deg] hover:scale-125 transition duration-700" alt="Dog image">
+</body>
+</html>
